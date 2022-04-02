@@ -13,9 +13,11 @@ html(lang="ko")
               a(href="/") Home
             if loggedIn 
               li
-                a(href="/users/logout") Log out 
+                a(href="/videos/upload") Upload Video
               li 
-                a(href=".my-profile") #{loggedInUser.name}의 Profile 
+                a(href="/users/edit") Edit Profile
+              li
+                a(href="/users/logout") Log out 
             else
               li 
                 a(href="/join") Join 
@@ -23,10 +25,6 @@ html(lang="ko")
                 a(href="/login") Login 
             li 
               a(href="/search") Search
-            li
-              a(href="/videos/upload") Upload Video
-        //h1 has only one value. the variable pageTitle
-        //the diffrence with #{} is that we don't mix in with string and value here
       block content
     footer 
       include partials/footer
