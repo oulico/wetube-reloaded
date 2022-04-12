@@ -5,8 +5,8 @@ import MongoStore from "connect-mongo";
 import rootRouter from "./routers/rootRouter";
 import userRouter from "./routers/userRouter";
 import videoRouter from "./routers/videoRouter";
-import { localsMiddleware } from "./middlewares";
 import apiRouter from "./routers/apiRouter";
+import { localsMiddleware } from "./middlewares";
 
 const PORT = 4000;
 
@@ -21,8 +21,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(
   session({
     secret: process.env.COOKIE_SECRET,
-    resave: true,
-    saveUninitialized: true,
+    resave: false,
+    saveUninitialized: false,
     store: MongoStore.create({ mongoUrl: process.env.DB_URL }),
   })
 );
