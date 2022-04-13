@@ -82,13 +82,13 @@ const handleFullscreen = () => {
 };
 
 const handleSpaceKey = (event) => {
-  if (event.code == "Space") {
+  if (event.target === document.body && event.code == "Space") {
     handlePlayClick();
   }
 };
 
 const handleEnterKey = (event) => {
-  if (event.code == "Enter") {
+  if (event.target === document.body && event.code == "Enter") {
     handleFullscreen();
   }
 };
