@@ -2,7 +2,6 @@ import express from "express";
 import {
   watch,
   getEdit,
-  upload,
   deleteVideo,
   postEdit,
   getUpload,

@@ -1,4 +1,3 @@
-import { create } from "connect-mongo";
 import express from "express";
 import {
   registerView,
