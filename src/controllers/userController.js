@@ -55,9 +55,10 @@ export const postLogin = async (req, res) => {
       errorMessage: "Wrong password",
     });
   }
-  req.session.loggedIn = true;
-  req.session.user = user;
-  return res.redirect("/");
+  // req.session.loggedIn = true;
+  // req.session.user = user;
+  // return res.redirect("/");
+  console.log("is it ok?");
 };
 
 export const startGithubLogin = (req, res) => {
@@ -201,7 +202,6 @@ export const postChangePassword = async (req, res) => {
   user.password = newPassword;
   await user.save();
   req.session.user.password = user.password;
-  // req.session.destroy();
   req.session.user = null;
   res.locals.loggedInUser = req.session.user;
   req.session.loggedIn = false;
